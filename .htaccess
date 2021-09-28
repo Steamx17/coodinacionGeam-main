@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php
+RewriteRule ^dashboard/$ /pages/dashboard.php [L]
+Options All -Indexes
+IndexIgnore *
+AddDefaultCharset utf-8
+ErrorDocument 404 /coordinacion/pages/error/404.php
+ErrorDocument 500 /coordinacion/pages/error/500.php
+ErrorDocument 403 /coordinacion/pages/error/403.php
+</IfModule>
